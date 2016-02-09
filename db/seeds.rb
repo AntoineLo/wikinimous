@@ -7,5 +7,5 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 10.times do
-  Article.create(title: Faker::Book.title, content: Faker::Lorem.paragraph)
+  Article.create(title: Faker::Book.title, content: Faker::Lorem.paragraph, user_id: 1)
 end

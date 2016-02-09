@@ -3,6 +3,7 @@
   <%= f.text_field :title, class: "form-control margin-form" %>
   <%= f.label :content, class: "margin-form" %>
   <%= f.text_area :content, class: "form-control form-area margin-form" %>
+  <%= f.hidden_field :user_id, value: @current_user.id %>
   <%= f.submit 'Post article', class: "form-control margin-form btn btn-primary" %>
 <% end %>
 <br>

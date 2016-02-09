@@ -1,11 +1,13 @@
 class ArticlesController < ApplicationController
   before_action :set_article, only: [:show, :edit, :update, :destroy]
+  before_filter :authorize, except: [:index, :show]
 
   def index
     @articles = Article.all
   end
 
   def show
+    @user = User.find(@article.user_id).name
   end
 
   def new
@@ -37,6 +39,6 @@ class ArticlesController < ApplicationController
   end
 
   def params_article
-    params.require(:article).permit(:title, :content)
+    params.require(:article).permit(:title, :content, :user_id)
   end
 end

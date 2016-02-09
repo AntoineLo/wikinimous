@@ -1,3 +1,4 @@
 <h2><%= @article.title %></h2>
+<p>Last updated by <strong><%= @user %></strong></p>
 <p><%= markdown(@article.content) %></p>
 <%= link_to "Go back to articles list", articles_path, class: "goback-link" %>

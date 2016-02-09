@@ -1,6 +1,7 @@
 <% @articles.each do |article| %>
   <h2><%= link_to article.title, article_path(article) %></h2>
+  <p>Last updated by <strong><%= User.find(article.user_id).name %></strong></p>
   <p><%= markdown(article.content) %></p>
-  <%= link_to "Edit", edit_article_path(article) %>
-  <%= link_to "Delete", article_path(article), method: :delete, data: {confirm: "Are you sure you want to delete this article?"} %>
+  <%= link_to "Edit", edit_article_path(article), class: "lobster-red" %>
+  <%= link_to "Delete", article_path(article), class: "lobster-red", method: :delete, data: {confirm: "Are you sure you want to delete this article?"} %>
 <% end %>
