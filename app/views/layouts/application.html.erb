@@ -2,13 +2,33 @@
 <html>
 <head>
   <title>Wikinimous</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+  <link href='https://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
 
-<%= yield %>
+  <div class="navbar-wagon navbar-wagon-fixed">
+    <%= image_tag 'lewagon.png', class: "navbar-wagon-brand" %>
+    <div class="navbar-title">
+      <h1>Wikinimous</h1>
+    </div>
+    <div class="navbar-wagon-right">
+      <%= link_to "New articles", new_article_path, class: "navbar-wagon-item navbar-wagon-button btn btn-small" %>
+    </div>
+  </div>
+
+  <div class="container padded-top">
+    <div class="row">
+      <div class="col-xs-10 col-xs-offset-1 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3">
+
+        <%= yield %>
+
+      </div>
+    </div>
+  </div>
 
 </body>
 </html>

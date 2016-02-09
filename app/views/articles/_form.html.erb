@@ -1,0 +1,9 @@
+<%= form_for @article do |f| %>
+  <%= f.label :title, class: "margin-form" %>
+  <%= f.text_field :title, class: "form-control margin-form" %>
+  <%= f.label :content, class: "margin-form" %>
+  <%= f.text_area :content, class: "form-control form-area margin-form" %>
+  <%= f.submit 'Post article', class: "form-control margin-form btn btn-primary" %>
+<% end %>
+<br>
+<%= link_to "Back to homepage", articles_path, class: "goback-link" %>
